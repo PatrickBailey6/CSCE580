@@ -1,0 +1,490 @@
+{
+"schema_version": "R3",
+"title": "Savory Cottage-Cheese & Grated-Cheese Flatbread (Pan Fried)",
+"description": "Thick, savory flatbread made from cottage cheese, grated hard cheese, eggs, flour and green onion. Cooked in a single frying pan (first side covered, then flipped and finished on low heat). Robot-chef friendly instructions include exact weights, timings, temperatures (approx.), tools and safety notes.",
+"yield": {
+"servings": 4,
+"portion_size_g": 200,
+"total_weight_g_estimate": 800
+},
+"times": {
+"prep_time_seconds": 300,
+"cook_time_seconds": 720,
+"total_time_seconds": 1020,
+"notes": "Prep ~5 min, Cook ~12 min (7 min first side + 5 min second side)."
+},
+"ingredients": [
+{
+"id": "ing1",
+"name": "milk",
+"amount": 100,
+"unit": "ml",
+"weight_g": 100,
+"notes": "room temperature"
+},
+{
+"id": "ing2",
+"name": "green onion (scallion), chopped",
+"amount": 30,
+"unit": "g",
+"weight_g": 30,
+"notes": "finely chopped"
+},
+{
+"id": "ing3",
+"name": "cottage cheese",
+"amount": 250,
+"unit": "g",
+"weight_g": 250,
+"notes": "drain only if extremely watery; use full-fat for best texture"
+},
+{
+"id": "ing4",
+"name": "grated hard cheese (e.g., Parmesan)",
+"amount": 200,
+"unit": "g",
+"weight_g": 200,
+"notes": "finely grated"
+},
+{
+"id": "ing5",
+"name": "salt",
+"amount": 0.25,
+"unit": "tsp",
+"weight_g": 1.5,
+"notes": "adjust to taste"
+},
+{
+"id": "ing6",
+"name": "eggs",
+"amount": 2,
+"unit": "count",
+"weight_g": 100,
+"notes": "large eggs (approx. 50 g each, whole)"
+},
+{
+"id": "ing7",
+"name": "all-purpose flour",
+"amount": 90,
+"unit": "g",
+"weight_g": 90,
+"notes": "sifted if lumpy"
+},
+{
+"id": "ing8",
+"name": "sunflower oil (or olive oil)",
+"amount": 1,
+"unit": "tbsp",
+"weight_g": 13,
+"notes": "for thin coating of pan"
+}
+],
+"equipment": [
+{
+"name": "mixing bowl",
+"mandatory": true
+},
+{
+"name": "whisk or fork",
+"mandatory": true
+},
+{
+"name": "spatula (heatproof)",
+"mandatory": true
+},
+{
+"name": "measuring scale",
+"mandatory": true
+},
+{
+"name": "measuring spoons",
+"mandatory": true
+},
+{
+"name": "frying pan (skillet), flat base, diameter 22–26 cm",
+"mandatory": true,
+"notes": "non-stick or well-seasoned"
+},
+{
+"name": "lid that fits pan (same diameter)",
+"mandatory": true
+},
+{
+"name": "plate or cutting board (approx same diameter as pan) for flipping",
+"mandatory": true,
+"notes": "plate should be heatproof"
+},
+{
+"name": "paper towel or cloth (for oil spreading)",
+"mandatory": true
+}
+],
+"safety": {
+"hot_surface_warning": "Pan and plate become hot during flip. Use heat-resistant gloves or robot gripper rated for high temperature. Keep flammable items away.",
+"knife_safety": "When chopping green onion, ensure cutting tool is secured and safety protocols for robot cutter are followed.",
+"child_supervision": "Original recipe authored by a parent with a 9-year-old helper; in human kitchens supervise children. For robot operation, ensure interlocks prevent accidents."
+},
+"step_sequence": [
+{
+"step_number": 1,
+"name": "Prepare ingredients",
+"description": "Measure and prepare all ingredients. Chop green onion finely.",
+"duration_seconds": 120,
+"actions": [
+{
+"type": "weigh",
+"target": "green onion",
+"amount_g": 30
+},
+{
+"type": "chop",
+"target": "green onion",
+"size_mm": 3,
+"tool": "robot_chopper"
+},
+{
+"type": "weigh",
+"target": "cottage cheese",
+"amount_g": 250
+},
+{
+"type": "weigh",
+"target": "grated cheese",
+"amount_g": 200
+},
+{
+"type": "weigh",
+"target": "flour",
+"amount_g": 90
+},
+{
+"type": "measure",
+"target": "milk",
+"amount_ml": 100
+}
+],
+"checks": [
+{
+"check_type": "moisture_check",
+"target": "cottage cheese",
+"action_if_wet": "drain_30s"
+}
+]
+},
+{
+"step_number": 2,
+"name": "Mix batter",
+"description": "Combine all wet and dry ingredients into a homogeneous batter.",
+"duration_seconds": 120,
+"actions": [
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing1"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing2"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing3"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing4"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing5"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing6"
+},
+{
+"type": "add",
+"target": "mixing bowl",
+"ingredient_id": "ing7"
+},
+{
+"type": "mix",
+"method": "whisk_or_spatula",
+"target": "mixing bowl",
+"until": "homogeneous",
+"max_time_seconds": 120,
+"mix_speed_rpm_estimate": 120
+}
+],
+"expected_result": "Batter with even distribution of cheese and green onion, pourable but thick (viscosity approx. 1000–3000 cP)."
+},
+{
+"step_number": 3,
+"name": "Prepare pan",
+"description": "Thinly coat the frying pan with oil using a paper towel so oil layer is minimal and even.",
+"duration_seconds": 30,
+"actions": [
+{
+"type": "add",
+"target": "container",
+"ingredient_id": "ing8"
+},
+{
+"type": "dispense",
+"target": "frying_pan",
+"amount_ml": 5,
+"notes": "dispense ~1/3 of tablespoon; remainder reserved"
+},
+{
+"type": "spread",
+"target": "frying_pan",
+"tool": "paper_towel",
+"method": "wipe",
+"goal": "thin_even_coating"
+}
+],
+"checks": [
+{
+"check_type": "surface_oil_uniformity",
+"target": "frying_pan",
+"pass_if": "no_pools"
+}
+]
+},
+{
+"step_number": 4,
+"name": "Heat pan to medium",
+"description": "Preheat pan to medium heat (robot stovetop power 60%). Target surface temperature ~150–170 °C.",
+"duration_seconds": 60,
+"actions": [
+{
+"type": "set_burner",
+"target": "stovetop",
+"power_percent": 60
+},
+{
+"type": "wait_until",
+"target": "pan_surface",
+"temperature_c_min": 140,
+"temperature_c_max": 180,
+"timeout_seconds": 120
+}
+],
+"safety": "If pan fails to reach temperature in timeout, abort and signal error."
+},
+{
+"step_number": 5,
+"name": "Pour batter and cook first side covered",
+"description": "Pour batter into preheated pan, spread evenly to a round of pan diameter. Cover with lid and cook until edges brown and top slightly set.",
+"duration_seconds": 420,
+"actions": [
+{
+"type": "pour",
+"source": "mixing_bowl",
+"target": "frying_pan",
+"amount_g_estimate": 800,
+"method": "center_pour"
+},
+{
+"type": "spread",
+"target": "frying_pan",
+"tool": "spatula",
+"goal": "even_layer_to_edge"
+},
+{
+"type": "cover",
+"target": "frying_pan",
+"tool": "lid"
+},
+{
+"type": "monitor",
+"target": "edge_color",
+"criteria": "edge_browned",
+"timeout_seconds": 7,
+"timeout_unit": "minutes"
+},
+{
+"type": "wait",
+"duration_seconds": 420
+}
+],
+"expected_result": "Edge browned, top slightly yellow and partially set. Flatbread moves slightly when pan is shaken."
+},
+{
+"step_number": 6,
+"name": "Check for sticking and readiness to flip",
+"description": "Confirm flatbread releases from pan and jiggles when shaken. If sticking, loosen with spatula.",
+"duration_seconds": 30,
+"actions": [
+{
+"type": "shake_pan",
+"target": "frying_pan",
+"method": "gentle",
+"pass_if": "flatbread_moves"
+},
+{
+"type": "if",
+"condition": "not flatbread_moves",
+"then": [
+{
+"type": "loosen",
+"tool": "spatula",
+"target": "edge_and_under"
+}
+]
+}
+],
+"safety": "When using metal spatula on non-stick surface, ensure angle prevents coating damage."
+},
+{
+"step_number": 7,
+"name": "Flip flatbread using plate (or board) and return to pan",
+"description": "Place a heatproof plate or cutting board on top of the pan, invert pan so flatbread transfers to the plate, then slide flatbread back into pan with uncooked side down. Act quickly but safely.",
+"duration_seconds": 60,
+"actions": [
+{
+"type": "place",
+"target": "plate",
+"position": "on_top_of_pan"
+},
+{
+"type": "invert",
+"target": "frying_pan",
+"destination": "plate",
+"method": "flip",
+"caution": "plate will become hot; use heat-resistant grip",
+"notes": "robot gripper must be heat-rated"
+},
+{
+"type": "use_spatula",
+"target": "flatbread_on_plate",
+"action": "return_to_pan",
+"orientation": "uncooked_side_down"
+}
+],
+"checks": [
+{
+"check_type": "placement_centered",
+"target": "flatbread",
+"pass_if": "within_10mm_of_pan_center"
+}
+],
+"notes": "If using robot, prefer using a cooled metal spatula to slide the flatbread rather than re-gripping the hot plate to minimize thermal transfers."
+},
+{
+"step_number": 8,
+"name": "Finish cooking on lowest heat covered",
+"description": "Cover pan, set burner to low, and cook until center is set and underside is golden; approx. 5–7 minutes.",
+"duration_seconds": 360,
+"actions": [
+{
+"type": "set_burner",
+"target": "stovetop",
+"power_percent": 20
+},
+{
+"type": "cover",
+"target": "frying_pan",
+"tool": "lid"
+},
+{
+"type": "wait",
+"duration_seconds": 300,
+"notes": "minimum 5 minutes"
+},
+{
+"type": "check_internal",
+"target": "center",
+"method": "probe",
+"expected_internal_temp_c_min": 75,
+"expected_internal_temp_c_max": 85,
+"timeout_seconds": 120
+}
+],
+"expected_result": "Flatbread fully cooked through; internal temperature >= 75 °C; surface golden."
+},
+{
+"step_number": 9,
+"name": "Remove and rest",
+"description": "Transfer flatbread to cutting board or plate and rest 2 minutes before cutting to allow structure to stabilize.",
+"duration_seconds": 120,
+"actions": [
+{
+"type": "place",
+"target": "cutting_board",
+"method": "invert_or_slide",
+"notes": "Use same plate/board method as earlier to remove."
+},
+{
+"type": "wait",
+"duration_seconds": 120
+}
+]
+},
+{
+"step_number": 10,
+"name": "Portion and serve",
+"description": "Cut into 4 equal wedges or smaller portions. Serve warm. Optionally garnish with extra chopped green onion.",
+"duration_seconds": 60,
+"actions": [
+{
+"type": "cut",
+"target": "flatbread",
+"method": "radial_cuts",
+"pieces": 4
+},
+{
+"type": "garnish_optional",
+"ingredient": "green onion",
+"amount_g": 5
+}
+],
+"serving_suggestion": "Serve immediately while warm; good for breakfast or any time."
+}
+],
+"robot_instructions_summary": {
+"prechecks": [
+"Verify all ingredient weights available and within ±5% tolerance.",
+"Verify pan diameter 22–26 cm and non-stick integrity.",
+"Verify robot gripper heat rating for flip operation or plan to use spatula-only method."
+],
+"failure_modes": [
+{
+"mode": "sticking",
+"detection": "flatbread does not move on gentle shake",
+"recovery": "loosen edges with spatula; increase oil by up to 2 ml; retry after 30 s"
+},
+{
+"mode": "undercooked_center",
+"detection": "internal_temp < 75 °C after finish time",
+"recovery": "cover and cook additional 60 s increments on low, re-probe"
+}
+],
+"safety_interlocks": [
+"If pan surface temperature > 230 °C, set burner to 0 and alert operator.",
+"If plate temperature exceeds safe handling threshold for the chosen robot gripper, use alternative removal method with spatula."
+]
+},
+"notes": {
+"origin": "Adapted from user's provided recipe text (includes human-authored tips and a video link).",
+"human_notes": "Original author notes a 9-year-old prepares dishes in their projects. Video reference provided in source but not required for robot execution.",
+"storage": "Store leftover flatbread refrigerated up to 48 hours. Reheat on low in pan until warmed through."
+},
+"tags": [
+"savory",
+"cheese",
+"pan-fried",
+"breakfast",
+"robot-chef"
+],
+"author": null,
+"source": {
+"notes": "Original uploaded recipe text used to construct this R3 file.",
+"file_citation":""
+}
+}

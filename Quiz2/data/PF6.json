@@ -1,0 +1,347 @@
+{
+"schema_version": "R3",
+"title": "Savory Cheese & Cottage Cheese Flatbread (Pan-Cooked)",
+"description": "A single-pan savory flatbread made with cottage cheese, grated hard cheese and green onion. Designed for reproducible execution by a cooking robot: precise weights/volumes, defined equipment, explicit actions, sensor checks and exact timings/temperatures. Yields one 22–24 cm flatbread suitable for 3–4 servings.",
+"yield": {
+"units": "flatbreads",
+"amount": 1,
+"servings": 3,
+"approx_total_weight_g": 700
+},
+"times": {
+"prep_time_minutes": 10,
+"cook_time_minutes": 14,
+"total_time_minutes": 24,
+"active_time_minutes": 20,
+"passive_time_minutes": 4
+},
+"ingredients": [
+{
+"name": "whole milk",
+"amount": 100,
+"unit": "ml",
+"weight_g": 100,
+"notes": "room temperature"
+},
+{
+"name": "green onion (scallion), trimmed",
+"amount": 30,
+"unit": "g",
+"weight_g": 30,
+"notes": "about ⅓ cup chopped; see prep for cut size"
+},
+{
+"name": "cottage cheese (drained)",
+"amount": 250,
+"unit": "g",
+"weight_g": 250,
+"notes": "small-curd or regular; drain excess whey if very wet"
+},
+{
+"name": "grated hard cheese",
+"amount": 200,
+"unit": "g",
+"weight_g": 200,
+"notes": "e.g., Parmesan or other hard cheese, finely grated"
+},
+{
+"name": "salt",
+"amount": 0.25,
+"unit": "tsp",
+"weight_g": 1.5,
+"notes": "adjust to taste"
+},
+{
+"name": "large eggs",
+"amount": 2,
+"unit": "each",
+"weight_g": 100,
+"notes": "room temperature"
+},
+{
+"name": "all-purpose flour",
+"amount": 90,
+"unit": "g",
+"weight_g": 90,
+"notes": "sifted"
+},
+{
+"name": "sunflower oil (or olive oil)",
+"amount": 15,
+"unit": "ml",
+"weight_g": 13.6,
+"notes": "1 tablespoon; enough to create a thin coating on the pan"
+}
+],
+"equipment": [
+{
+"name": "precision scale",
+"purpose": "weigh solids and liquids to grams"
+},
+{
+"name": "measuring cylinder or graduated cup",
+"purpose": "measure 100 ml milk and 15 ml oil if scale not used"
+},
+{
+"name": "cutting board",
+"purpose": "chopping green onions"
+},
+{
+"name": "chef's knife (robot-compatible) or vegetable chopper",
+"purpose": "dice green onion to 3–5 mm pieces"
+},
+{
+"name": "large mixing bowl (≥2 L)",
+"purpose": "combine wet and dry ingredients"
+},
+{
+"name": "spatula",
+"purpose": "mixing and spreading batter in pan"
+},
+{
+"name": "whisk or fork",
+"purpose": "pre-mix eggs and milk"
+},
+{
+"name": "non-stick frying pan or skillet",
+"spec": "diameter 22–26 cm, flat bottom",
+"purpose": "cook flatbread"
+},
+{
+"name": "induction or gas cooktop with temperature control or surface thermometer",
+"purpose": "set and monitor pan surface temperature"
+},
+{
+"name": "lid matching pan diameter",
+"purpose": "cover while cooking"
+},
+{
+"name": "heatproof plate or cutting board (for flipping)",
+"purpose": "flip flatbread safely"
+},
+{
+"name": "paper towel or thin lint-free cloth",
+"purpose": "spread oil into a thin film"
+}
+],
+"robot_instructions": {
+"safety": [
+"Use heat sensors and thermal cutouts. Maintain protective distance when flipping with plate.",
+"Handle hot surfaces with robot gripper rated for expected temperatures.",
+"Ensure eggs are fresh (use standard freshness check)."
+],
+"assumptions": [
+"Robot has access to a flat-bottom non-stick pan and can control cooktop to target surface temperatures.",
+"Robot can perform basic knife/food manipulations and can handle plates/cutting boards for flipping.",
+"Visual inspection or simple motion-detection is available to verify 'jiggle' and surface color changes."
+]
+},
+"steps": [
+{
+"step_number": 1,
+"title": "Prepare ingredients and workspace",
+"instruction": [
+"Verify ingredient quantities by weighing each ingredient with the precision scale to the gram values listed in the 'ingredients' section.",
+"Bring eggs and milk to room temperature if stored cold (remove from fridge 15–30 minutes before start).",
+"Place pan, lid, spatula, plate/cutting board and paper towel within robot reach."
+],
+"expected_results": "All ingredients measured and laid out; pan and tools ready."
+},
+{
+"step_number": 2,
+"title": "Chop green onion",
+"instruction": [
+"Trim root ends and any wilted tops from green onions.",
+"Dice green onion into uniform pieces approximately 3–5 mm (0.12–0.20 in).",
+"Weigh 30 g of chopped green onion and set aside."
+],
+"sensors": "vision to verify approximate uniform dice size; scale to confirm weight.",
+"expected_results": "30 g of 3–5 mm diced green onion in a small container."
+},
+{
+"step_number": 3,
+"title": "Combine liquid ingredients",
+"instruction": [
+"Crack 2 eggs into a small bowl. Whisk eggs until homogeneous.",
+"Add 100 ml room-temperature milk to the whisked eggs. Whisk to combine."
+],
+"parameters": {
+"whisk_duration_seconds": 15,
+"whisk_speed": "medium"
+},
+"expected_results": "Uniform egg-milk mixture, no streaks of egg white or yolk."
+},
+{
+"step_number": 4,
+"title": "Assemble batter",
+"instruction": [
+"In the large mixing bowl, add in order: 250 g drained cottage cheese, 200 g grated hard cheese, 90 g sifted all-purpose flour, 0.25 tsp (≈1.5 g) salt, and the 30 g diced green onion.",
+"Pour the egg-milk mixture into the bowl.",
+"Mix with a spatula or low-speed mixer until a uniform batter is formed. Mix until there are no visible dry pockets of flour; total mixing time ~30–45 seconds. Aim for a spreadable batter with small cheese curds and no large lumps."
+],
+"quality_checks": [
+"Visually verify there are no dry flour streaks.",
+"Batter viscosity target: should flow slowly when tilted (~1–2 cm/sec edge spread in a 22 cm pan)."
+],
+"expected_results": "Evenly mixed batter, homogeneous distribution of cheese and green onion."
+},
+{
+"step_number": 5,
+"title": "Prepare pan with thin oil film",
+"instruction": [
+"Pour 15 ml oil into a small dispenser next to the pan.",
+"Robot places paper towel on pan surface and uses a small controlled motion to spread oil into a uniform thin film covering the entire cooking surface. Target oil film thickness: ≤0.02 mm.",
+"Remove paper towel and discard or place in waste container."
+],
+"sensors": "vision to verify full coverage; weight/dispensed volume check to confirm ~15 ml used.",
+"expected_results": "Pan surface uniformly coated with a thin oil film."
+},
+{
+"step_number": 6,
+"title": "Preheat pan to target surface temperature",
+"instruction": [
+"Set cooktop/pan surface to 160 °C (320 °F) surface temperature. If only 'medium' power is available, use calibrated medium that reaches 150–170 °C surface. Use a surface thermometer or contact thermocouple to verify.",
+"Wait until pan surface temperature reaches 160 °C ± 10 °C."
+],
+"timeout_seconds": 300,
+"sensors": "contact surface thermometer reading; only proceed when temperature in range.",
+"expected_results": "Pan surface stable at 150–170 °C."
+},
+{
+"step_number": 7,
+"title": "Pour batter and initial cook",
+"instruction": [
+"Pour the batter into the center of the preheated pan. Using the spatula, rapidly spread the batter to an even layer of approximately 22–24 cm diameter and 10–12 mm thickness.",
+"Cover pan with lid immediately.",
+"Cook undisturbed at 160 °C surface for 7 minutes."
+],
+"sensors_checks": [
+"After 5 minutes, use vision to check edge color: edge should begin to brown. If browning is earlier than 6 minutes (edge color L* drop observed), note time and proceed to step 8 when top is set.",
+"At 7 minutes, check top surface for color change to pale yellow and verify that edges have visibly browned."
+],
+"expected_results": "Bottom/edge browned; top mostly set but not fully cooked."
+},
+{
+"step_number": 8,
+"title": "Check release/jiggle",
+"instruction": [
+"Gently rock the pan (robotically) side to side over a 5 mm amplitude to detect movement of the flatbread.",
+"If the flatbread moves and shows uniform slight jiggle, it is ready to flip. If it sticks, carefully loosen edges with a thin spatula and re-check."
+],
+"sensors": "force/torque sensors on pan holder to detect movement; vision to observe edge separation.",
+"decision": [
+"If detectable release achieved → proceed to flip (step 9).",
+"If still sticking after gentle loosening → continue cooking covered at 160 °C for additional 1 minute, then re-check (repeat up to twice)."
+],
+"expected_results": "Flatbread moves freely in pan with minimal sticking."
+},
+{
+"step_number": 9,
+"title": "Flip flatbread using plate",
+"instruction": [
+"Select a heatproof plate or cutting board with diameter equal to or slightly larger than the flatbread (22–26 cm). Place the plate centered on top of the pan.",
+"Secure plate with robot gripper and invert pan+plate assembly so the cooked side transfers to the plate. Perform inversion in a single smooth motion to minimize deformation.",
+"Quickly but carefully slide the flatbread (cooked side up) from the plate back into the pan to place uncooked side down. Use a spatula to assist alignment if necessary.",
+"Warning: plate and pan surfaces will be hot. Use thermal-rated grippers and maintain safe acceleration to prevent spills."
+],
+"sensors": "vision to confirm full transfer; temperature sensors to ensure grip safety.",
+"expected_results": "Flatbread successfully flipped; uncooked side now contacting pan surface."
+},
+{
+"step_number": 10,
+"title": "Finish cook on low heat",
+"instruction": [
+"Reduce cooktop/pan surface to low: target 100–120 °C surface temperature.",
+"Cover with lid and cook for 6 minutes (target: 5–7 minutes) at 100–120 °C until the second side is set and lightly browned.",
+"After 6 minutes, remove lid and visually inspect top for uniform set and light golden color."
+],
+"sensors": "surface thermometer; vision color check.",
+"expected_results": "Both sides cooked through; internal temperature reaches at least 75 °C in center when probed."
+},
+{
+"step_number": 11,
+"title": "Remove and rest",
+"instruction": [
+"Place a cutting board or plate on top of the pan and invert again to transfer the flatbread onto the board (cooked side up).",
+"Allow the flatbread to rest for 2 minutes on the board to stabilize structure before cutting and serving."
+],
+"sensors": "vision to confirm intact transfer; thermometer to verify cooling to safe handling temperature ~60–65 °C if immediate cutting required.",
+"expected_results": "Flatbread on board, intact and ready to portion."
+},
+{
+"step_number": 12,
+"title": "Portion and serve",
+"instruction": [
+"Cut the flatbread into 6 equal wedges using a chef's knife. Wipe blade between cuts for clean edges.",
+"Serve warm or at room temperature. Optional: garnish with extra chopped green onion or a dollop of sour cream."
+],
+"expected_results": "6 uniform portions; internal texture is soft with integrated cheese and green onion pieces."
+}
+],
+"sensors_and_checks": {
+"temperature_targets": {
+"pan_initial_surface": "160 ± 10 °C",
+"pan_finish_surface": "100–120 °C",
+"center_internal_final_min": "75 °C"
+},
+"visual_checks": [
+"Edge browning after initial cook (brown color visible around circumference).",
+"Top surface changes to pale yellow and loses glossy wet appearance before flip.",
+"After finish cook, top is uniformly set and lightly golden."
+],
+"mechanical_checks": [
+"Pan-rock test: flatbread moves/jiggles when pan is shaken → indicates release.",
+"Spatula loosening if sticking is detected."
+]
+},
+"storage": {
+"short_term": "Store covered in refrigerator up to 3 days. Reheat in pan at low heat until warmed through (avoid drying).",
+"freezing": "Not recommended for best texture; can freeze portions wrapped airtight up to 1 month and thaw overnight in refrigerator before reheating."
+},
+"troubleshooting": [
+{
+"issue": "Flatbread sticks to pan",
+"possible_causes": [
+"Pan not properly oiled or oil burned",
+"Pan temperature too high causing proteins to bond to surface"
+],
+"solutions": [
+"Ensure a thin oil film is applied before heating (step 5).",
+"Lower initial surface temperature by 10–20 °C and increase initial cook time by 1 minute.",
+"Loosen edges with thin spatula and wait 30–60 seconds; then retry pan-rock test."
+]
+},
+{
+"issue": "Center is undercooked after finish",
+"possible_causes": [
+"Layer too thick (>12 mm) or pan temperature too low",
+"Ingredients too cold"
+],
+"solutions": [
+"Spread batter thinner to 10–12 mm thickness.",
+"Ensure eggs and milk are at room temperature before mixing.",
+"After flipping, increase low-heat finish time by 1–2 minutes and confirm internal temperature ≥75 °C."
+]
+}
+],
+"notes": {
+"original_author_note": "A savory, rich flavor of cottage cheese and cheese. The green onion only slightly complements the flavor; preferred for breakfast but good any time of day. In the original project, the dish was prepared by the author's 9-year-old daughter.",
+"video_reference": "Original video demonstration available (Russian) at https://youtu.be/f44GWPEu8us— timing reference for the flip is ~7:32 in the video.",
+"robotization_tips": [
+"Use a non-stick pan with a slight lip for safe inversion during robotic flip.",
+"Calibrate 'medium' and 'low' cooktop settings against pan surface thermometer before first production run."
+]
+},
+"tags": [
+"savory",
+"flatbread",
+"cottage cheese",
+"one-pan",
+"robot-friendly",
+"breakfast"
+],
+"source": {
+"notes": "Translated and formalized from the user's provided recipe text.",
+"file_citation": ""
+}
+}
