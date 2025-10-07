@@ -1,0 +1,274 @@
+{
+  "schema": "R3",
+  "version": "1.0",
+  "name": "No-Bake Pumpkin Pie Filling / Dip",
+  "description": "Smooth no-bake pumpkin pie filling or dip that can be used as a pie filling, pastry filling, or served as a dip. Source recipe text: :contentReference[oaicite:0]{index=0}",
+  "source": ":contentReference[oaicite:1]{index=1}",
+  "yield": {
+    "servings": 8,
+    "volume_estimate_ml": 900
+  },
+  "ingredients": [
+    {
+      "id": "ing1",
+      "name": "cream cheese",
+      "amount": 226,
+      "unit": "g",
+      "display": "8 oz (226 g)",
+      "state": "softened",
+      "notes": "If cold, soften before mixing (optional microwave or room temp)."
+    },
+    {
+      "id": "ing2",
+      "name": "vanilla extract",
+      "amount": 5,
+      "unit": "g",
+      "display": "1 tsp (5 g)"
+    },
+    {
+      "id": "ing3",
+      "name": "canned pumpkin (pure)",
+      "amount": 245,
+      "unit": "g",
+      "display": "1 cup (245 g)"
+    },
+    {
+      "id": "ing4",
+      "name": "whipped topping",
+      "amount": 226,
+      "unit": "g",
+      "display": "1 8-oz tub (226 g)"
+    },
+    {
+      "id": "ing5",
+      "name": "ground cinnamon",
+      "amount": 1,
+      "unit": "g",
+      "display": "1/2 tsp (approx. 1 g)"
+    },
+    {
+      "id": "ing6",
+      "name": "pumpkin pie spice",
+      "amount": 1,
+      "unit": "g",
+      "display": "1/2 tsp (approx. 1 g)"
+    },
+    {
+      "id": "ing7",
+      "name": "powdered sugar",
+      "amount": 110,
+      "unit": "g",
+      "display": "1 cup (110 g)"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "tool1",
+      "name": "large mixing bowl",
+      "type": "bowl",
+      "notes": "Capacity >= 1 L"
+    },
+    {
+      "id": "tool2",
+      "name": "stand or hand mixer",
+      "type": "mixer",
+      "notes": "Hand mixer acceptable"
+    },
+    {
+      "id": "tool3",
+      "name": "spatula",
+      "type": "spatula",
+      "notes": "For scraping bowl"
+    },
+    {
+      "id": "tool4",
+      "name": "microwave (optional)",
+      "type": "heat_appliance",
+      "notes": "Only used if cream cheese needs softening"
+    },
+    {
+      "id": "tool5",
+      "name": "serving bowl or pie shell",
+      "type": "container"
+    }
+  ],
+  "constraints": {
+    "temperature": {
+      "cream_cheese_soft_state": "approximately room temperature (20-22°C) recommended for smooth texture"
+    },
+    "safety": [
+      "When microwaving, use microwave-safe container and short increments to avoid overheating.",
+      "Ensure whipped topping is thawed if previously frozen."
+    ]
+  },
+  "steps": [
+    {
+      "id": "step0",
+      "title": "Prepare & verify ingredients",
+      "description": "Collect all ingredients and equipment. Confirm cream cheese is softened or plan to soften it.",
+      "actions": [
+        {
+          "action": "GATHER",
+          "target_tools": ["tool1","tool2","tool3","tool5"],
+          "target_ingredients": ["ing1","ing2","ing3","ing4","ing5","ing6","ing7"],
+          "duration_s": 30
+        },
+        {
+          "action": "CHECK_STATE",
+          "target_ingredients": ["ing1"],
+          "condition": "softened",
+          "on_false": {
+            "goto": "step0a"
+          }
+        }
+      ]
+    },
+    {
+      "id": "step0a",
+      "title": "Optional: Soften cream cheese",
+      "description": "If cream cheese is not soft, warm briefly in microwave in short increments or allow to sit at room temperature until softened.",
+      "actions": [
+        {
+          "action": "MICROWAVE",
+          "target_tools": ["tool4"],
+          "target_ingredients": ["ing1"],
+          "parameters": {
+            "mode": "pulse",
+            "power_percent": 50,
+            "pulse_seconds": 10,
+            "max_cycles": 3,
+            "stop_condition": "cream_cheese_soft"
+          },
+          "duration_s": 30
+        },
+        {
+          "action": "WAIT",
+          "parameters": {
+            "duration_s": 300,
+            "method": "room_temperature",
+            "notes": "Alternative to microwaving: leave out for ~30 minutes"
+          }
+        }
+      ],
+      "optional": true
+    },
+    {
+      "id": "step1",
+      "title": "Add ingredients to bowl",
+      "description": "Place all ingredients into the large mixing bowl.",
+      "actions": [
+        {
+          "action": "ADD",
+          "target_ingredients": ["ing1"],
+          "target_tools": ["tool1"],
+          "amount_g": 226
+        },
+        {
+          "action": "ADD",
+          "target_ingredients": ["ing2"],
+          "target_tools": ["tool1"],
+          "amount_g": 5
+        },
+        {
+          "action": "ADD",
+          "target_ingredients": ["ing3"],
+          "target_tools": ["tool1"],
+          "amount_g": 245
+        },
+        {
+          "action": "ADD",
+          "target_ingredients": ["ing4"],
+          "target_tools": ["tool1"],
+          "amount_g": 226
+        },
+        {
+          "action": "ADD",
+          "target_ingredients": ["ing5","ing6","ing7"],
+          "target_tools": ["tool1"],
+          "amounts_g": [1,1,110]
+        }
+      ],
+      "expected_state_after": "all_ingredients_in_bowl"
+    },
+    {
+      "id": "step2",
+      "title": "Mix until smooth",
+      "description": "Mix the bowl contents with the mixer until the mixture is uniform and smooth with no visible cream cheese lumps.",
+      "actions": [
+        {
+          "action": "MIX",
+          "target_tools": ["tool2"],
+          "target_container": "tool1",
+          "parameters": {
+            "speed": "medium",
+            "duration_s_estimate": 120,
+            "stop_condition": "homogeneous_and_smooth",
+            "check_interval_s": 15
+          },
+          "notes": "Use spatula to scrape sides once or twice during mixing to ensure even mixing."
+        },
+        {
+          "action": "SCRAPE",
+          "target_tools": ["tool3"],
+          "target_container": "tool1",
+          "parameters": {
+            "times": 2,
+            "when": "during_mix"
+          }
+        }
+      ],
+      "acceptance_criteria": {
+        "texture": "smooth",
+        "no_visible_chunks_larger_than_mm": 5
+      }
+    },
+    {
+      "id": "step3",
+      "title": "Transfer & serve or store",
+      "description": "Transfer mixture to serving bowl or use as desired to fill a no-bake pie or pastries. Optionally top with whipped cream and a sprinkle of cinnamon.",
+      "actions": [
+        {
+          "action": "TRANSFER",
+          "from": "tool1",
+          "to": "tool5",
+          "method": "spatula",
+          "duration_s": 30
+        },
+        {
+          "action": "GARNISH",
+          "target_ingredients": [],
+          "parameters": {
+            "suggested_garnish": ["whipped cream","cinnamon"],
+            "optional": true
+          }
+        },
+        {
+          "action": "CLEAN",
+          "target_tools": ["tool1","tool3","tool2"],
+          "parameters": {
+            "method": "wash_or_remove_tips"
+          }
+        }
+      ],
+      "final_state": "ready_to_serve_or_use_as_filling"
+    },
+    {
+      "id": "notes",
+      "title": "Notes & variants",
+      "description": "Notes from source: If cream cheese isn't completely softened, small chunks may remain but flavor is fine. This mixture can be used as a dip, pie filling (no-bake), or pastry filling.",
+      "source_reference": ":contentReference[oaicite:2]{index=2}"
+    }
+  ],
+  "robotization_notes": {
+    "precision": {
+      "ingredient_tolerance_g": 2,
+      "mixing_stop_condition": "visual/texture check; robot should inspect with camera or follow time-based fallback"
+    },
+    "sensors_recommended": [
+      "camera_for_texture_check",
+      "scale_for_ingredient_dosing",
+      "temperature_sensor_if_microwaving"
+    ],
+    "human_override": "Allowed for final quality check (taste/texture) and optional garnishing."
+  }
+}

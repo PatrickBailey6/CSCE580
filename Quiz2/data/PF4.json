@@ -1,0 +1,134 @@
+{
+"schema_version": "R3",
+"title": "Cheese and Cottage Cheese Flatbread with Green Onions",
+"description": "A savory, rich, and cheesy flatbread made from cottage cheese, green onions, eggs, and flour — pan-fried to golden perfection. This simple and kid-friendly recipe yields a soft, flavorful flatbread perfect for breakfast, lunch, or any time of day.",
+"yield": "1 large flatbread (serves 2–3 people)",
+"times": {
+"prep_time_minutes": 10,
+"cook_time_minutes": 15,
+"total_time_minutes": 25,
+"active_time_minutes": 25,
+"passive_time_minutes": 0
+},
+"ingredients": [
+{
+"name": "Milk",
+"amount": 100,
+"unit": "ml",
+"us_equivalent": "⅓ cup + 1 tsp"
+},
+{
+"name": "Green onion",
+"amount": 30,
+"unit": "g",
+"us_equivalent": "⅓ cup chopped"
+},
+{
+"name": "Cottage cheese",
+"amount": 250,
+"unit": "g",
+"us_equivalent": "1 cup"
+},
+{
+"name": "Grated hard cheese (e.g., Parmesan)",
+"amount": 200,
+"unit": "g",
+"us_equivalent": "2 cups",
+"notes": "Other hard cheeses work well too"
+},
+{
+"name": "Salt",
+"amount": 0.25,
+"unit": "tsp"
+},
+{
+"name": "Eggs",
+"amount": 2,
+"unit": "pieces"
+},
+{
+"name": "Flour",
+"amount": 90,
+"unit": "g",
+"us_equivalent": "¾ cup"
+},
+{
+"name": "Sunflower oil (or olive oil)",
+"amount": 1,
+"unit": "tbsp",
+"notes": "For frying"
+}
+],
+"equipment": [
+"Large mixing bowl",
+"Whisk or spoon for mixing",
+"Frying pan (non-stick recommended)",
+"Spatula",
+"Lid for frying pan",
+"Plate (same size as the pan)",
+"Cutting board",
+"Paper towel"
+],
+"steps": [
+{
+"step_number": 1,
+"title": "Chop the green onion",
+"instruction": "Finely chop the green onion and set it aside."
+},
+{
+"step_number": 2,
+"title": "Mix the ingredients",
+"instruction": "In a large bowl, combine milk, green onion, eggs, salt, flour, grated cheese, and cottage cheese. Mix thoroughly until smooth and uniform."
+},
+{
+"step_number": 3,
+"title": "Prepare the pan",
+"instruction": "Pour a small amount of oil into the frying pan. Use a paper towel to spread the oil thinly and evenly across the surface."
+},
+{
+"step_number": 4,
+"title": "Cook the first side",
+"instruction": "Heat the pan over medium heat. Pour the batter into the pan and spread it evenly with a spatula. Cover with a lid and cook for about 7 minutes, until the bottom browns and the top turns slightly yellow."
+},
+{
+"step_number": 5,
+"title": "Check and loosen",
+"instruction": "Gently shake the pan to ensure the flatbread is not sticking. If it sticks, carefully loosen it with a spatula."
+},
+{
+"step_number": 6,
+"title": "Flip the flatbread",
+"instruction": "Place a plate over the flatbread (the same size as the pan). Holding both the plate and the pan, flip them together quickly. Then slide the flatbread back into the pan, uncooked side down. Cover and cook over low heat for another 5–7 minutes."
+},
+{
+"step_number": 7,
+"title": "Finish and serve",
+"instruction": "Once cooked on both sides, remove the flatbread. You can flip it onto a cutting board instead of a plate for easy slicing. Serve warm."
+}
+],
+"notes": {
+"texture_and_flavor": "The result is a rich, cheesy flatbread with a subtle onion flavor. The cottage cheese gives it a tender texture.",
+"kid_friendly": "This recipe is simple enough for kids to make with supervision — it was prepared by the creator’s 9-year-old daughter.",
+"video_link": "https://youtu.be/f44GWPEu8us",
+"serving_suggestions": [
+"Serve for breakfast with sour cream or fresh herbs.",
+"Enjoy as a savory snack or side dish."
+],
+"storage": "Store leftovers covered in the refrigerator for up to 2 days. Reheat gently in a pan or microwave."
+},
+"tags": [
+"savory",
+"flatbread",
+"cheese",
+"cottage cheese",
+"pan-fried",
+"easy",
+"breakfast",
+"kid-friendly"
+],
+"author": "Original recipe author (via video link)",
+"source": {
+"notes": "Extracted and structured from the uploaded text description and recipe steps.",
+"file_citation": ""
+}
+}

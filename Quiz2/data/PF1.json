@@ -1,0 +1,112 @@
+{
+"schema_version": "R3",
+"title": "Super Easy No-Bake Pumpkin Pie Filling / Dip",
+"description": "A quick, no-bake pumpkin pie filling or dip that's great as a pie filling, pastry filling, or served as a cookie dip. Comes together in under 10 minutes and is served chilled or at room temperature.",
+"yield": "About 3 cups (roughly 6–8 servings, depending on portion size)",
+"times": {
+"prep_time_minutes": 10,
+"cook_time_minutes": 0,
+"total_time_minutes": 10,
+"active_time_minutes": 10,
+"passive_time_minutes": 0
+},
+"ingredients": [
+{
+"name": "cream cheese",
+"amount": 8,
+"unit": "oz",
+"weight_g": 226,
+"notes": "softened"
+},
+{
+"name": "vanilla extract",
+"amount": 1,
+"unit": "tsp",
+"weight_g": 5
+},
+{
+"name": "canned pure pumpkin (or homemade)",
+"amount": 1,
+"unit": "cup",
+"weight_g": 245,
+"notes": "not pumpkin pie filling — pure pumpkin"
+},
+{
+"name": "whipped topping",
+"amount": 8,
+"unit": "oz",
+"weight_g": 226,
+"notes": "one 8-oz tub (e.g., thawed Cool Whip or similar)"
+},
+{
+"name": "ground cinnamon",
+"amount": 0.5,
+"unit": "tsp",
+"weight_g": 1
+},
+{
+"name": "pumpkin pie spice",
+"amount": 0.5,
+"unit": "tsp",
+"weight_g": 1
+},
+{
+"name": "powdered sugar",
+"amount": 1,
+"unit": "cup",
+"weight_g": 110
+}
+],
+"equipment": [
+"large bowl",
+"mixer (hand or stand)",
+"spatula",
+"measuring cups and spoons"
+],
+"steps": [
+{
+"step_number": 1,
+"title": "Prepare cream cheese",
+"instruction": "Ensure the cream cheese is softened to room temperature so it blends smoothly. If it's still firm, soften briefly in the microwave in 5–10 second intervals.",
+"notes": "If not softened, small chunks of cream cheese may remain in the final mixture; flavor will be fine but texture less smooth."
+},
+{
+"step_number": 2,
+"title": "Combine ingredients",
+"instruction": "Add the softened cream cheese, vanilla extract, canned pumpkin, whipped topping, ground cinnamon, pumpkin pie spice, and powdered sugar to a large bowl.",
+"notes": "Use a mixer to beat until well combined and smooth. Scrape the bowl with a spatula to ensure even mixing."
+},
+{
+"step_number": 3,
+"title": "Finish and serve",
+"instruction": "Transfer to a serving bowl or use as a filling. Serve as a dip with cookies, spoon into a no-bake pie crust for a quick pumpkin pie, or use as a pastry/cream filling for eclairs, donuts, or cream puffs.",
+"notes": "Top with additional whipped cream and a sprinkle of cinnamon if desired. Chill briefly if you prefer it cold, but serving at room temperature is fine."
+}
+],
+"notes": {
+"uses": [
+"No-bake pumpkin pie filling",
+"Dip for cookies or graham crackers",
+"Filling for cream puffs, eclairs, or donuts",
+"Serve in a bowl topped with whipped cream"
+],
+"storage": "Store covered in the refrigerator up to 3–4 days.",
+"tips": [
+"Do not confuse canned pure pumpkin with pumpkin pie filling (the latter is sweetened and spiced already).",
+"For a firmer filling, fold less whipped topping or chill for 30–60 minutes before using in a pie."
+]
+},
+"tags": [
+"no-bake",
+"pumpkin",
+"dip",
+"holiday",
+"fall",
+"quick"
+],
+"author": null,
+"source": {
+"notes": "Original uploaded recipe text.",
+"file_citation": ""
+}
+}

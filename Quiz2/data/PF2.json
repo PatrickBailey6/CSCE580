@@ -1,0 +1,295 @@
+{
+  "r3_version": "1.0",
+  "recipe_id": "no_bake_pumpkin_dip_001",
+  "title": "No-Bake Pumpkin Pie Filling / Dip (Robot-Ready)",
+  "description": "A smooth no-bake pumpkin pie filling or dip that can be used as a pie filling, pastry filling, or cookie dip. Created from the user's provided recipe. Source: :contentReference[oaicite:0]{index=0}",
+  "source": {
+    "file_reference": ":contentReference[oaicite:1]{index=1}",
+    "notes": "Original recipe text provided by user (no-bake pumpkin pie filling/dip)."
+  },
+  "yield": {
+    "servings": 6,
+    "total_volume_ml": 850,
+    "notes": "Estimated servings and total volume based on ingredient totals."
+  },
+  "ingredients": [
+    {
+      "id": "ing_cream_cheese",
+      "name": "cream cheese",
+      "ingredient_type": "dairy",
+      "amount": 226,
+      "unit": "g",
+      "state": "softened",
+      "notes": "8 oz (226 g) cream cheese, should be softened to room temperature for best smoothness."
+    },
+    {
+      "id": "ing_vanilla",
+      "name": "vanilla extract",
+      "ingredient_type": "flavoring",
+      "amount": 5,
+      "unit": "g",
+      "notes": "1 tsp (5 g)"
+    },
+    {
+      "id": "ing_pumpkin",
+      "name": "canned pumpkin (pure)",
+      "ingredient_type": "produce",
+      "amount": 245,
+      "unit": "g",
+      "notes": "1 cup (245 g) canned pure pumpkin or homemade pumpkin purée."
+    },
+    {
+      "id": "ing_whipped_topping",
+      "name": "whipped topping",
+      "ingredient_type": "dairy_substitute",
+      "amount": 226,
+      "unit": "g",
+      "notes": "1 8-oz tub (226 g) of whipped topping (e.g., thawed frozen whipped topping or similar)."
+    },
+    {
+      "id": "ing_cinnamon",
+      "name": "ground cinnamon",
+      "ingredient_type": "spice",
+      "amount": 1,
+      "unit": "g",
+      "notes": "1/2 tsp (approx. 1 g)"
+    },
+    {
+      "id": "ing_pumpkin_spice",
+      "name": "pumpkin pie spice",
+      "ingredient_type": "spice",
+      "amount": 1,
+      "unit": "g",
+      "notes": "1/2 tsp (approx. 1 g)"
+    },
+    {
+      "id": "ing_powdered_sugar",
+      "name": "powdered sugar",
+      "ingredient_type": "sweetener",
+      "amount": 110,
+      "unit": "g",
+      "notes": "1 cup (110 g)"
+    }
+  ],
+  "equipment": [
+    {
+      "id": "eq_bowl_1",
+      "name": "large mixing bowl",
+      "type": "bowl",
+      "capacity_ml": 1500
+    },
+    {
+      "id": "eq_mixer",
+      "name": "electric mixer (stand or hand)",
+      "type": "mixer",
+      "capabilities": ["mix", "whip"],
+      "speed_range_rpm": [100, 2000]
+    },
+    {
+      "id": "eq_spatula",
+      "name": "spatula",
+      "type": "utensil"
+    }
+  ],
+  "containers": [
+    {
+      "id": "container_output",
+      "name": "serving bowl or pie shell",
+      "type": "container",
+      "capacity_ml": 1000
+    }
+  ],
+  "preparation": [
+    {
+      "id": "prep_soften_cream_cheese",
+      "description": "Ensure cream cheese is softened to room temperature.",
+      "conditions": [
+        {
+          "if": "cream_cheese_temp < 15",
+          "recommendation": "Warm in microwave at defrost/low power in short bursts (5–8 seconds), checking frequently to avoid melting."
+        }
+      ],
+      "estimated_time_min": 30,
+      "note": "If cream cheese is already soft, skip."
+    }
+  ],
+  "procedure": [
+    {
+      "step_id": "step_1_add_ingredients",
+      "type": "add",
+      "description": "Add all ingredients to the large mixing bowl.",
+      "actions": [
+        {
+          "action": "transfer",
+          "from": "ing_cream_cheese",
+          "to": "eq_bowl_1",
+          "amount": 226,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_vanilla",
+          "to": "eq_bowl_1",
+          "amount": 5,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_pumpkin",
+          "to": "eq_bowl_1",
+          "amount": 245,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_whipped_topping",
+          "to": "eq_bowl_1",
+          "amount": 226,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_cinnamon",
+          "to": "eq_bowl_1",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_pumpkin_spice",
+          "to": "eq_bowl_1",
+          "amount": 1,
+          "unit": "g"
+        },
+        {
+          "action": "transfer",
+          "from": "ing_powdered_sugar",
+          "to": "eq_bowl_1",
+          "amount": 110,
+          "unit": "g"
+        }
+      ],
+      "expected_state": "all ingredients in bowl",
+      "estimated_time_min": 1
+    },
+    {
+      "step_id": "step_2_mix_until_smooth",
+      "type": "mix",
+      "description": "Mix until well combined and smooth. Scrape bowl sides once or twice with spatula.",
+      "actions": [
+        {
+          "action": "start_mixer",
+          "device": "eq_mixer",
+          "initial_speed_rpm": 250,
+          "ramp_to_speed_rpm": 600,
+          "ramp_time_s": 10
+        },
+        {
+          "action": "mix_for_duration",
+          "device": "eq_mixer",
+          "speed_rpm": 600,
+          "duration_s": 90,
+          "target_consistency": "smooth"
+        },
+        {
+          "action": "stop_mixer",
+          "device": "eq_mixer"
+        },
+        {
+          "action": "scrape",
+          "device": "eq_spatula",
+          "from": "sides",
+          "to": "center"
+        },
+        {
+          "action": "mix_for_duration",
+          "device": "eq_mixer",
+          "speed_rpm": 400,
+          "duration_s": 30,
+          "target_consistency": "homogeneous"
+        }
+      ],
+      "sensors": [
+        {
+          "sensor_type": "viscosity_estimate",
+          "target_value": "spreadable",
+          "note": "Robot should verify smoothness visually or via torque feedback. If small chunks detected, continue mixing in 15–30 s increments."
+        }
+      ],
+      "estimated_time_min": 3
+    },
+    {
+      "step_id": "step_3_adjust_texture_optional",
+      "type": "adjust",
+      "description": "Optional: if mixture is too thick, fold in up to 15–30 g additional whipped topping or 5–10 g milk to adjust texture. If too thin, add up to 10–20 g powdered sugar.",
+      "actions": [
+        {
+          "action": "measure",
+          "device": "none",
+          "note": "Manual or robot measurement based on sensor feedback."
+        },
+        {
+          "action": "fold",
+          "device": "eq_spatula",
+          "duration_s": 15
+        }
+      ],
+      "estimated_time_min": 1
+    },
+    {
+      "step_id": "step_4_transfer_and_serve",
+      "type": "transfer",
+      "description": "Transfer final filling/dip to serving bowl or into pie shell. Optionally top with additional whipped cream and a dusting of cinnamon.",
+      "actions": [
+        {
+          "action": "transfer",
+          "from": "eq_bowl_1",
+          "to": "container_output",
+          "amount": null,
+          "unit": null
+        }
+      ],
+      "notes": [
+        "Serve immediately or chill before serving.",
+        "For pie use: press into prepared no-bake pie crust and chill 1–2 hours for best firmness (chilling step not required for dip use)."
+      ],
+      "estimated_time_min": 1
+    }
+  ],
+  "timing": {
+    "total_active_time_min": 6,
+    "total_elapsed_time_min": 6,
+    "chill_recommendation": {
+      "for_pie": {
+        "chill_time_min": 60,
+        "note": "Chill 1–2 hours to set if used as pie filling."
+      },
+      "for_dip": {
+        "chill_time_min": 0,
+        "note": "Can be served immediately; chilling improves texture and flavor meld (30–60 minutes optional)."
+      }
+    }
+  },
+  "safety_and_storage": {
+    "food_safety": [
+      "Keep refrigerated at <= 4°C (39°F) if not serving immediately.",
+      "Consume within 3–4 days when refrigerated."
+    ],
+    "allergens": [
+      "Contains dairy (cream cheese, whipped topping may contain dairy).",
+      "May contain traces of eggs depending on commercial whipped topping product."
+    ]
+  },
+  "robot_instructions_metadata": {
+    "assumptions": [
+      "Ingredient weight conversions provided in original text were used where available.",
+      "Softened cream cheese is required for smooth texture; robot may apply gentle brief warming if equipped with a microwave/heat function (not included in steps by default)."
+    ],
+    "uncertainties_and_estimates": [
+      "Mixing durations are estimated (90s + 30s) — robots should use torque/viscosity/vision feedback to confirm smoothness.",
+      "Yield (servings and total volume) is estimated."
+    ],
+    "version": "2025-10-07"
+  },
+  "notes_for_human_operator": "If cream cheese is cold and robot cannot gently warm, allow human to pre-soften or extend mixing time and use spatula to break down lumps. Original recipe text: :contentReference[oaicite:2]{index=2}"
+}
