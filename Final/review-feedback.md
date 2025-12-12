@@ -8,5 +8,5 @@
        * code not provided
        * (d) not attempted
      - marks: 10 + 15 + (10 + 10 + 10 + 10) + 0
-   - Total: 10 + 85 = 95
+   - Total: 10 + 65 = 75
      (Out of 120, will be scaled later) 
